@@ -133,8 +133,11 @@ button,
 span.unread,
 span.replied,
 span.claimed,
-.actions span.defaulted {
-  font-family: Verdana, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
+.actions span.defaulted,
+.splash .news .meta,
+.datetime,
+select {
+  font-family: Figtree, Verdana, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
 }
 
 /* headings font family */
@@ -145,7 +148,7 @@ h4,
 h5,
 h6,
 .heading {
-  font-family: Verdana, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
+  font-family: Figtree, Verdana, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
   overflow-wrap: anywhere;
   word-break: normal;
   font-weight: bold;
@@ -159,11 +162,9 @@ var,
 pre,
 samp,
 textarea#skin_css,
-.css.module blockquote pre,
-.splash .news .meta,
-.datetime {
+.css.module blockquote pre {
   font-size: 0.9em;
-  font-family: Consolas, Monaco, Courier, monospace;
+  font-family: Victor Mono, Consolas, Monaco, Courier, monospace;
 }
 
 /*============================================================
@@ -2333,18 +2334,19 @@ li.picture.blurb,
   margin: 0;
 }
 
-/* create bookmark ribbon */
+/* Create bookmark ribbon */
 .bookmark .blurb p.status a:not(.short a)::before {
-  position: absolute;
-  top: -5px;
-  z-index: -1;
-  box-sizing: border-box;
-  height: 40px;
-  border-inline: 13px solid;
-  /* width */
-  border-bottom: 5.5px solid transparent;
-  border-radius: 0 0 0.2rem 0.2rem;
-  content: "";
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    box-sizing: border-box;
+    height: 40px;
+    border-inline: 14px solid;
+    border-bottom: 5.5px solid transparent;
+    border-radius: 0 0 0.2rem 0.2rem;
+    content: "";
 }
 
 /* hide number of bookmarks icon => can be found in the stats anyway */
@@ -3660,7 +3662,6 @@ img[src$="/images/skins/iconsets/default/warning-yes.png"] {
     /* url of new icon */
     var(--icon6);
   /* change background color here */
-  background-position: center -2px;
 }
 
 /* External work */
@@ -4308,12 +4309,8 @@ li.blurb #header.region>ul.navigation.actions>li.dropdown {
 /* user notes styling */
 .user-note-preview>div>div,
 .note-textarea {
-  border: 1px solid var(--border3) !important;
   border-radius: var(--radius-big) !important;
-}
-
-.user-note-preview>div>div {
-  box-shadow: var(--shadow-box2) !important;
+  border: var(--border-width) solid var(--border2) !important;
 }
 
 /* remove border when note exists */
@@ -4328,7 +4325,6 @@ li.blurb #header.region>ul.navigation.actions>li.dropdown {
   color: var(--int-btn-txt) !important;
   border: 1px solid var(--int-btn-border) !important;
   border-radius: var(--radius-small) !important;
-  box-shadow: var(--shadow-buttons) !important;
   padding: 0.25em 0.75em !important;
   font-size: 1em !important;
   cursor: pointer !important;
@@ -4338,14 +4334,12 @@ li.blurb #header.region>ul.navigation.actions>li.dropdown {
 .note-actions button:is(:hover, :focus) {
   background: var(--int-btn-hgl-bg) !important;
   color: var(--int-btn-hgl-txt) !important;
-  border-color: var(--int-btn-hgl-border) !important;
 }
 
 .user-note-preview details {
-  border-color: var(--border3) !important;
+  border: none !important;
   border-radius: var(--radius-mid) !important;
   background: var(--bg6) !important;
-  box-shadow: var(--shadow-box2) !important;
   padding: 0 !important;
   margin: 18px 0 1px 0 !important;
 }

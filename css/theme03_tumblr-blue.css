@@ -27,15 +27,15 @@ Color palettes used for main backgrounds, borders, text and interaction elements
   --margins-narrow:      2.5%;                     /* site contents and header on tablet/mobile */
 
   /* border-radius (= roundness of corners) */
-  --radius-small:        0.5rem;                  /* smaller elements: list elements, input elements etc. */
-  --radius-mid:          0.5rem;                      /* midsizde elements: dropdown menus, system messages etc. */
-  --radius-big:          0.5rem;                      /* bigger elements: blurbs, forms, comments, textareas etc. */
+  --radius-small:        8px;                  /* smaller elements: list elements, input elements etc. */
+  --radius-mid:          8px;                      /* midsizde elements: dropdown menus, system messages etc. */
+  --radius-big:          8px;                      /* bigger elements: blurbs, forms, comments, textareas etc. */
   --radius-alt:          14px;                     /* header search box, buttons, tags */
 
   /* icon border-radius */
-  --icon-content-radius: 0.5rem;                  /* content and bookmark icon */
+  --icon-content-radius: 99999px;                  /* content and bookmark icon */
   --icon-primary-radius: 99999px;                  /* primary and comment icon */
-  --icon-index-radius:   0.5rem;                  /* index icon */
+  --icon-index-radius:   8px;                  /* index icon */
 
 
 /*>========== MAIN BACKGROUND COLORS ==========<*/
@@ -43,9 +43,9 @@ Color palettes used for main backgrounds, borders, text and interaction elements
   --bg1:                 #1A2735;                  /* main background, footer etc. */
   --bg2:                 transparent;              /* header */
   --bg3:                 transparent;              /* dashboard */
-  --bg4:                 var(--bg5);                  /* forms, modal dialogs, javascript context etc. */
-  --bg5:                 #23364c;                  /* content boxes (blurbs, comments etc.), meta box */
-  --bg6:                 var(--bg5);                  /* dropdown and secondary menus, tooltips etc. */
+  --bg4:                 #36465D;                  /* forms, modal dialogs, javascript context etc. */
+  --bg5:                 #263B53;                  /* content boxes (blurbs, comments etc.), meta box */
+  --bg6:                 #3D4C62;                  /* dropdown and secondary menus, tooltips etc. */
   --bg7:                 #26323F;                  /* own blurbs, listbox, some even/odd list items etc. */
   --bg8:                 #529ECC;                  /* collection header */
 
@@ -223,7 +223,8 @@ span.replied,
 span.claimed,
 .actions span.defaulted,
 .datetime,
-.splash .news .meta {
+.splash .news .meta,
+select {
   font-family: "Favorit", "Instrument Sans", "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
 }
 
@@ -314,6 +315,26 @@ textarea#skin_css,
 >> 07 INTERACTIONS
 ============================================================*/
 
+/*>========== nesting ==========<*/
+
+fieldset,
+fieldset fieldset,
+fieldset dl dl,
+fieldset fieldset fieldset,
+fieldset fieldset dl dl,
+dd.hideme,
+form blockquote.userstuff,
+form.single fieldset {
+  border: var(--border-width) solid var(--border2);
+  background: var(--bg7);
+
+}
+
+form dl {
+    background: var(--bg7);
+    border: none;
+}
+
 /* see "Archive: (7) interactions skin" by AO3 */
 /*>========== form rules ==========<*/
 
@@ -325,6 +346,15 @@ input#user_password:focus,
 select:focus,
 textarea:focus {
   outline-width: 1.5px;
+}
+
+/* legends = little heading boxes on forms */
+form.verbose legend,
+.verbose form legend,
+form.single legend {
+  border: var(--border-width) solid var(--border2);
+  background: var(--bg7);
+  border-radius: var(--radius-small);
 }
 
 /*>========== INPUT ELEMENTS: checkboxes, radio buttons etc. ==========<*/
@@ -370,8 +400,13 @@ input::file-selector-button {
   border-width: 1.5px !important;
 }
 
-.actions a:active, .current, a.current, a.current:hover, a:link.current, .current a:visited {
-	border: none !important;
+.actions a:active,
+.current,
+a.current,
+a.current:hover,
+a:link.current,
+.current a:visited {
+  border: var(--int-current-bg) !important;
 }
 
 .chapter.actions a:not(:hover, :focus) {
@@ -465,6 +500,7 @@ a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag):
 .tags a[data-remote="true"]:is(:hover, :focus) {
   box-shadow: 0 0 0 1.75px var(--tag-hgl-bg);
   border: 1px solid var(--link-hgl) !important;
+  transition: 25ms ease-out;
 }
 
 /* fandom tags */
@@ -523,18 +559,33 @@ li.added:is(:hover, :focus) .delete a {
 /*============================================================
 >> 11 GROUP: LISTBOX
 ============================================================*/
+/* see "Archive 2.0: (11) group listbox skin by AO3" by AO3 */
 
-.listbox .index {
-	background-color: var(--bg7);
+.listbox,
+fieldset fieldset.listbox {
+  clear: right;
+  overflow: hidden;
+  margin: 0.643em auto 1em auto;
+  padding: 0;
+  border: var(--border-width) solid var(--border2);
+  border-radius: var(--radius-big);
+  box-shadow: none;
+  background-color: var(--bg7);
+}
+
+/*============================================================
+>> 12 GROUP: META
+============================================================*/
+/* see "Archive: (12) group meta skin" by AO3 */
+
+dl.meta {
+  border: none !important;
 }
 
 /*============================================================
 >> 13 GROUP: BLURB
 ============================================================*/
 /* see "Archive: (13) group blurb skin" by AO3 */
-
-
-/*>========== various little mods ==========<*/
 
 /*>>========== mod: READING ==========<<*/
 
@@ -564,4 +615,19 @@ form ul.notes,
 .alert .userstuff {
   border: none;
   color: var(--txt-alt2);
+}
+
+
+/*============================================================
+>> Z1 REPLACE THE ICONS AND IMAGES
+============================================================*/
+/* Warnings apply */
+.required-tags .warning-yes,
+img[src$="/images/skins/iconsets/default/warning-yes.png"] {
+  background:
+    url("https://i.ibb.co/Jj9yFqFq/zerafina-icon-warning-yes-01.png"),
+    /* url of new icon */
+    var(--icon6);
+  /* change background color here */
+  background-position: center -2px;
 }
