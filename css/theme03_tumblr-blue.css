@@ -27,15 +27,15 @@ Color palettes used for main backgrounds, borders, text and interaction elements
   --margins-narrow:      2.5%;                     /* site contents and header on tablet/mobile */
 
   /* border-radius (= roundness of corners) */
-  --radius-small:        0.25rem;                  /* smaller elements: list elements, input elements etc. */
-  --radius-mid:          6px;                      /* midsizde elements: dropdown menus, system messages etc. */
-  --radius-big:          8px;                      /* bigger elements: blurbs, forms, comments, textareas etc. */
+  --radius-small:        0.5rem;                  /* smaller elements: list elements, input elements etc. */
+  --radius-mid:          0.5rem;                      /* midsizde elements: dropdown menus, system messages etc. */
+  --radius-big:          0.5rem;                      /* bigger elements: blurbs, forms, comments, textareas etc. */
   --radius-alt:          14px;                     /* header search box, buttons, tags */
 
   /* icon border-radius */
-  --icon-content-radius: 0.25rem;                  /* content and bookmark icon */
+  --icon-content-radius: 0.5rem;                  /* content and bookmark icon */
   --icon-primary-radius: 99999px;                  /* primary and comment icon */
-  --icon-index-radius:   0.25rem;                  /* index icon */
+  --icon-index-radius:   0.5rem;                  /* index icon */
 
 
 /*>========== MAIN BACKGROUND COLORS ==========<*/
@@ -87,7 +87,7 @@ Color palettes used for main backgrounds, borders, text and interaction elements
   /* links */
   --link:                var(--bg8);               /* link color */
   --link-hgl:            #00B8FF;                  /* color for hovered/focused links */
-  --link-visited:        #596578;                  /* color for already visited links + header search bar icon */
+  --link-visited:        #636f83;                  /* color for already visited links + header search bar icon */
   --link-underline:      1px solid transparent;    /* link underline => delete "transparent" to make link underlines visible */
 
 
@@ -429,10 +429,6 @@ span.unread {
 
 /*>>========== new tag styling ==========<<*/
 
-/* tag layout */
-.tags.commas:has(a.tag, a[data-remote="true"]) {
-  column-gap: 12px; /* width of gap between neighbouring tags */
-}
 
 /* change appearance of tags here */
 /* excluding fandom list, fav tags on splash page and heading tags in some places */
@@ -441,8 +437,8 @@ a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag),
 .unwrangled,
 .added.tag {
   margin-block: 0.15em; /* gap between tag rows; needs to be done with margin because row-gap is not allowed on AO3 (as of August 2025) */
-  padding: 0;
-  border: var(--border-width) solid var(--tag-border);
+  padding: 0.15em 0.5em;
+  border: var(--border-width) solid var(--tag-freeform-txt);
   font-size: 0.95em;
   line-height: 1.25;
   text-decoration: none;
@@ -464,7 +460,42 @@ a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag):
 .listbox .heading a.tag:visited:is(:hover, :focus),
 .tags a[data-remote="true"]:is(:hover, :focus) {
   box-shadow: 0 0 0 1.75px var(--tag-hgl-bg);
+  border: 1px solid var(--link-hgl) !important;
 }
+
+/* fandom tags */
+.blurb h5.fandoms.heading a.tag,
+dd.fandom.tags a {
+  border: 1px solid var(--tag-fandom-txt) !important;
+}
+
+/* warning tags */
+[class^="warning"] a.tag {
+  font-weight: 400;
+  border: 1px solid var(--tag-warning-txt) !important;
+}
+
+/* relationship tags */
+[class^="relationship"] a.tag {
+  border: 1px solid var(--tag-ship-txt) !important;
+}
+
+/* character tags */
+[class^="character"] a.tag {
+  border: 1px solid var(--tag-character-txt) !important;
+}
+
+/* freeform tags */
+[class^="freeform"] a.tag {
+  border: 1px solid var(--tag-freeform-txt) !important;
+}
+
+/* unwrangled tags */
+.unwrangled {
+  border: var(--border-width) dashed var(--border4);
+  background: transparent;
+}
+
 
 /*>>========== added tags (search, filters, bookmarks etc.) ==========<<*/
 
@@ -483,6 +514,14 @@ li.added:is(:hover, :focus) {
 
 li.added:is(:hover, :focus) .delete a {
   color: inherit;
+}
+
+/*============================================================
+>> 11 GROUP: LISTBOX
+============================================================*/
+
+.listbox .index {
+	background-color: var(--bg7);
 }
 
 /*============================================================

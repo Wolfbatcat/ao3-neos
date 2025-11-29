@@ -1,6 +1,6 @@
 /*============================================================
 
-                           ~ neos ~
+                           ~ neos - modified ~
 
             a site skin for the Archive of Our Own
                         by ZerafinaCSS
@@ -8,6 +8,7 @@
 ==============================================================
 LINKS & CREDITS
 ==============================================================
+NOTE: This skin has been modified by BlackBatCats to include some tweaks and fixes. Find the original neos skin below.
 
 CODE & INSTRUCTIONS:
 
@@ -65,24 +66,27 @@ Alphanumeric = Additions by ZerafinaCSS
 
 /* main text */
 body:not(#tinymce) {
-  font-size: var(--txt-size-main); /* main font size */
-  color: var(--txt-main); /* main font color */
+  font-size: var(--txt-size-main);
+  /* main font size */
+  color: var(--txt-main);
+  /* main font color */
 }
 
 /* this wraps everything (header, inner, footer) */
 #outer {
   display: flex;
-    flex-direction: column;
+  flex-direction: column;
   min-height: 100vh;
   background-color: var(--bg1);
 }
 
 /* this is where the content is */
 #inner {
-  flex-grow: 1; /* this makes the footer stay at the bottom of the screen */
+  flex-grow: 1;
+  /* this makes the footer stay at the bottom of the screen */
   display: flex;
-    flex-flow: row;
-    justify-content: flex-start;
+  flex-flow: row;
+  justify-content: flex-start;
   min-height: 70vh;
 }
 
@@ -100,7 +104,7 @@ button:focus,
 #footer a:focus,
 #footer button:focus,
 .submit input:focus,
-.filters input:focus + .indicator + span,
+.filters input:focus+.indicator+span,
 .filters .expander:focus {
   outline: none;
 }
@@ -174,8 +178,10 @@ a.work,
 .blurb h4 a:link,
 div.preface .byline a,
 .filters p a {
-  border-bottom: var(--link-underline); /* link underline */
-  color: var(--link); /* link color */
+  border-bottom: var(--link-underline);
+  /* link underline */
+  color: var(--link);
+  /* link color */
 }
 
 a:is(:hover, :focus),
@@ -186,13 +192,16 @@ div.preface .byline a:is(:hover, :focus),
 .fandom.index.group a.tag:is(:hover, :focus),
 h2.heading a.tag:is(:hover, :focus),
 .filters p a:is(:hover, :focus) {
-  border-bottom-color: inherit; /* make link underline visible on hover */
-  color: var(--link-hgl); /* link hover color */
+  border-bottom-color: inherit;
+  /* make link underline visible on hover */
+  color: var(--link-hgl);
+  /* link hover color */
 }
 
 a:visited,
 .blurb .heading a:visited {
-  color: var(--link-visited); /* different color for visited links */
+  color: var(--link-visited);
+  /* different color for visited links */
 }
 
 /* remove border on images that are links */
@@ -223,7 +232,8 @@ hr {
 em,
 cite,
 i {
-  font-style: italic; /* this is oblique in the default skin but I want true italics */
+  font-style: italic;
+  /* this is oblique in the default skin but I want true italics */
 }
 
 /*>========== tables ==========<*/
@@ -277,10 +287,10 @@ col.name {
 #header,
 #tos_prompt .heading {
   display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    align-content: center;
-    column-gap: 1.25em;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: center;
+  column-gap: 1.25em;
   position: unset;
   z-index: 100;
   box-sizing: border-box;
@@ -293,15 +303,16 @@ col.name {
 }
 
 /* header elements */
-#header > h1,
-#header > h2,
-#header > nav .user,
-#header > nav .dropdown-toggle,
+#header>h1,
+#header>h2,
+#header>nav .user,
+#header>nav .dropdown-toggle,
 #header li.search {
   display: flex;
-    align-items: center;
+  align-items: center;
   box-sizing: border-box;
-  min-height: 38px; /* CHANGE HEIGHT OF HEADER HERE */
+  min-height: 38px;
+  /* CHANGE HEIGHT OF HEADER HERE */
 }
 
 /* remove space before header title */
@@ -325,9 +336,11 @@ col.name {
 
 /* new AO3 title/heading */
 #header .heading a::before {
-  font-weight: 700; /* make title bold */
+  font-weight: 700;
+  /* make title bold */
   font-size: 1.15em;
-  color: var(--txt-header); /* change title/heading color here */
+  color: var(--txt-header);
+  /* change title/heading color here */
   content: "AO3";
 }
 
@@ -364,12 +377,13 @@ col.name {
 #header .open::before {
   position: absolute;
   z-index: 6;
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
   border-right: 8px solid transparent !important;
   border-bottom: 8px solid var(--bg6);
   border-left: 8px solid transparent !important;
-  color: var(--border3); /* this is the border/drop-shadow color; I have to do it this way because otherwise AO3 won't let me use custom properties here */
+  color: var(--border3);
+  /* this is the border/drop-shadow color; I have to do it this way because otherwise AO3 won't let me use custom properties here */
   transform: translate(-50%, 31px);
   filter: drop-shadow(0 -1px);
   content: "";
@@ -403,6 +417,7 @@ col.name {
   border-radius: var(--radius-small);
   background-color: transparent;
   color: var(--txt-main);
+  transition: 25ms ease-out;
 }
 
 /* dropdown menu list item links hover and focus */
@@ -421,8 +436,8 @@ col.name {
 }
 
 /* dropdown toggle => hovered/focused/active */
-#header .navigation.actions .dropdown:is(.open, :hover, :focus, :active) > a,
-#header .navigation.actions > .dropdown a:is(:hover, :focus, :active),
+#header .navigation.actions .dropdown:is(.open, :hover, :focus, :active)>a,
+#header .navigation.actions>.dropdown a:is(:hover, :focus, :active),
 #header .user a:is(:hover, :focus, :active) {
   background: transparent;
   color: var(--txt-header-hgl);
@@ -444,12 +459,12 @@ col.name {
 #header .user,
 #header .user a,
 #small_login .action,
-#greeting .user > li {
+#greeting .user>li {
   margin: 0;
   padding: 0;
 }
 
-#greeting .user > li {
+#greeting .user>li {
   line-height: 0;
 }
 
@@ -461,12 +476,12 @@ col.name {
 /*>>========== replace user actions buttons with icons ==========<<*/
 
 /* user icon (replaces the "Hi, [username]!") */
-#header #greeting .dropdown > a[href*="/users/"] {
+#header #greeting .dropdown>a[href*="/users/"] {
   content: url("https://i.ibb.co/CcTHKR1/zerafina-header-icon-user.png");
 }
 
 /* "Post" icon */
-#header #greeting .dropdown > a[href*="/works/new"] {
+#header #greeting .dropdown>a[href*="/works/new"] {
   content: url("https://i.ibb.co/mVn7sTrk/zerafina-header-icon-new-work.png");
 }
 
@@ -476,7 +491,7 @@ col.name {
 }
 
 /* settings for the icons */
-#header #greeting > ul > li > a {
+#header #greeting>ul>li>a {
   display: inline-block;
   height: 18px;
   padding: 10px 0;
@@ -485,13 +500,13 @@ col.name {
 }
 
 /* colors for header icons when hovered/focused */
-#header #greeting > ul > li:is(.open, :hover, :focus) > a,
-#header #greeting > ul > li > a:is(:hover, :focus) {
+#header #greeting>ul>li:is(.open, :hover, :focus)>a,
+#header #greeting>ul>li>a:is(:hover, :focus) {
   filter: var(--header-icon-hgl);
 }
 
 /* gap between icons (works because of "display: flex" above) */
-#header > nav .user {
+#header>nav .user {
   column-gap: 0.5em;
 }
 
@@ -502,23 +517,26 @@ col.name {
   order: 2;
   flex: 1;
   max-width: 100%;
-  border-width: var(--border-width) !important; /* important for the mobile skin */
-  border-color: var(--border2) !important; /* important for the mobile skin */
+  border-width: var(--border-width) !important;
+  /* important for the mobile skin */
+  border-color: var(--border2) !important;
+  /* important for the mobile skin */
 }
 
 #header .primary {
   display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
-    align-content: center;
-    align-items: center;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-content: center;
+  align-items: center;
   box-sizing: border-box;
   box-shadow: none;
-  background: none; /* remove background-image and fallback color */
+  background: none;
+  /* remove background-image and fallback color */
 }
 
 /* remove space before navigation */
-#header .primary > li.dropdown:first-of-type {
+#header .primary>li.dropdown:first-of-type {
   margin-left: 0;
 }
 
@@ -540,7 +558,8 @@ col.name {
   font-weight: 700;
   font-size: 1.25em;
   color: var(--link-visited);
-  content: "\002315"; /* this is a unicode symbol that looks like a magnifying glass */
+  content: "\002315";
+  /* this is a unicode symbol that looks like a magnifying glass */
 }
 
 /* remove weird empty space before the search bar */
@@ -553,7 +572,8 @@ col.name {
   min-width: 170px;
   max-width: 20vw;
   margin: 0;
-  padding-left: 1.8em; /* make room for the search icon */
+  padding-left: 1.8em;
+  /* make room for the search icon */
   border: var(--border-width) solid var(--border2);
   border-radius: var(--radius-alt);
   box-shadow: none;
@@ -605,15 +625,18 @@ col.name {
   top: 0;
   box-sizing: border-box;
   width: 18%;
-  min-width: 150px; /* prevent sidebar from getting too narrow */
-  max-width: 230px; /* prevent sidebar from getting too wide */
+  min-width: 150px;
+  /* prevent sidebar from getting too narrow */
+  max-width: 230px;
+  /* prevent sidebar from getting too wide */
   max-height: 100vh;
   overflow-x: visible;
   overflow-y: auto;
   padding: 0.429rem 0.5rem 0 0.5rem;
   border: none;
   border-right: var(--border-width) solid;
-  border-color: var(--border1) !important; /* needs to be like this for tablet + mobile skin */
+  border-color: var(--border1) !important;
+  /* needs to be like this for tablet + mobile skin */
   border-radius: 0;
   background-color: var(--bg3);
   font-size: 0.875em;
@@ -681,7 +704,8 @@ col.name {
 }
 
 #main.dashboard {
-  width: 82%; /* dashboard is 18% wide so #main with dahsboard should take up the remaining space */
+  width: 82%;
+  /* dashboard is 18% wide so #main with dahsboard should take up the remaining space */
 }
 
 /* hide the error message pictures */
@@ -734,8 +758,8 @@ col.name {
 
 #footer ul.navigation.actions {
   display: flex;
-    justify-content: space-between;
-    column-gap: 5%;
+  justify-content: space-between;
+  column-gap: 5%;
   box-sizing: border-box;
   width: 100%;
   margin: 0;
@@ -823,11 +847,11 @@ label {
   margin-right: 0;
 }
 
-fieldset > fieldset > dl > dt > label {
+fieldset>fieldset>dl>dt>label {
   font-weight: 700;
 }
 
-fieldset > ul > li:has(label input[type="radio"]) {
+fieldset>ul>li:has(label input[type="radio"]) {
   margin: 0 !important;
 }
 
@@ -921,7 +945,7 @@ form dd.any {
   width: 75%;
 }
 
-form dd + dd {
+form dd+dd {
   width: 100%;
 }
 
@@ -950,6 +974,15 @@ div.comment-preview.userstuff {
   border: 1.5px dotted var(--border2) !important;
   border-radius: var(--radius-small);
   background: transparent;
+}
+
+/* archive warnings styling */
+dt.warning {
+  font-weight: 400;
+}
+
+dt.warning>a:nth-child(1) {
+  color: var(--txt-main);
 }
 
 /*>========== INPUT ELEMENTS: checkboxes, radio buttons etc. ==========<*/
@@ -997,8 +1030,8 @@ input[type="radio"]:disabled {
   cursor: not-allowed;
 }
 
-input[type="radio"] + label,
-input[type="checkbox"] + label {
+input[type="radio"]+label,
+input[type="checkbox"]+label {
   padding-left: 0;
 }
 
@@ -1006,11 +1039,11 @@ input[type="checkbox"] + label {
 /* I probably made this unnecessarily complicated and idek if it works everywhere */
 ul:not(ul.actions) li:has(input[type="checkbox"] + label):not(:has(fieldset)),
 ul:not(ul.actions) li:has(input[type="radio"] + label):not(:has(fieldset)),
-ul:not(ul.actions) li:not(.blurb ul li) > label:has(input[type="checkbox"]),
-ul:not(ul.actions) li:not(.blurb ul li) > label:has(input[type="radio"]) {
+ul:not(ul.actions) li:not(.blurb ul li)>label:has(input[type="checkbox"]),
+ul:not(ul.actions) li:not(.blurb ul li)>label:has(input[type="radio"]) {
   display: flex !important;
-    align-items: baseline;
-    column-gap: 0.5em;
+  align-items: baseline;
+  column-gap: 0.5em;
   width: fit-content;
   margin: 0;
   padding-block: 0.3215em;
@@ -1049,7 +1082,8 @@ input[type="checkbox"]::before,
   font-size: 0.75em;
   line-height: 1;
   text-align: center;
-  content: "\002716\fe0e"; /* unicode cross */
+  content: "\002716\fe0e";
+  /* unicode cross */
   transform: unset;
 }
 
@@ -1079,8 +1113,8 @@ label.action input[type="checkbox"]:checked:hover {
 }
 
 /* hide filter checkbox dublicates */
-.filters [type="radio"] + .indicator,
-.filters [type="checkbox"] + .indicator {
+.filters [type="radio"]+.indicator,
+.filters [type="checkbox"]+.indicator {
   display: none;
 }
 
@@ -1088,7 +1122,8 @@ label.action input[type="checkbox"]:checked:hover {
 
 input[type="radio"],
 .filters [type="radio"] {
-  border-radius: 100%; /* make radio buttons round again */
+  border-radius: 100%;
+  /* make radio buttons round again */
 }
 
 /* style checked radio buttons */
@@ -1270,6 +1305,12 @@ textarea.LV_invalid_field:is(:hover, :focus) {
   color: var(--txt-alt2);
 }
 
+#modal .footer .action.modal-closer {
+	bottom: 4px;
+	position: absolute;
+	right: 8px;
+}
+
 /*>========== MODE: DYNAMIC ==========<*/
 
 div.dynamic {
@@ -1360,10 +1401,13 @@ input::file-selector-button {
   border-radius: var(--radius-alt);
   box-shadow: var(--shadow-buttons);
   background: var(--int-btn-bg);
-  background-origin: border-box !important; /* border-box because if I add a background image (gradient) it should start from the corner of the border, NOT the corner of the padding edge */
+  background-origin: border-box !important;
+  /* border-box because if I add a background image (gradient) it should start from the corner of the border, NOT the corner of the padding edge */
   font-weight: 400;
-  white-space: normal; /* prevent overflow */
+  white-space: normal;
+  /* prevent overflow */
   color: var(--int-btn-txt);
+  transition: 25ms ease-out;
 }
 
 /* social media buttons on homepage */
@@ -1377,7 +1421,8 @@ label.action,
 }
 
 input[type="submit"] {
-  height: auto; /* DO NOT DELETE */
+  height: auto;
+  /* DO NOT DELETE */
 }
 
 /*>========== subtypes and modes ==========<*/
@@ -1393,7 +1438,7 @@ a.action:is(:hover, :focus),
 button:is(:hover, :focus),
 input[type="submit"]:is(:hover, :focus),
 input::file-selector-button:is(:hover, :focus),
-.listbox > .heading .action a:is(:hover, :focus) {
+.listbox>.heading .action a:is(:hover, :focus) {
   border: var(--border-width) solid var(--link);
   box-shadow: none;
   background: var(--int-btn-hgl-bg);
@@ -1454,7 +1499,7 @@ span.delete a {
 }
 
 /* prevent the "Unsubscribe" button from becoming too large */
-.subscriptions-index .edit_subscription > input[type="submit"] {
+.subscriptions-index .edit_subscription>input[type="submit"] {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1463,7 +1508,7 @@ span.delete a {
 /*>========== attempt to fix the spacing ==========<*/
 /* I hate this so much ... */
 
-ul.actions:not(.navigation) > *:not(:first-child),
+ul.actions:not(.navigation)>*:not(:first-child),
 fieldset.actions li:not(:first-child) {
   padding-left: 0.2em;
 }
@@ -1490,17 +1535,29 @@ fieldset.actions li:not(:first-child) {
   display: none;
 }
 
+.work.navigation .download,
+.javascript .work.navigation .download .secondary {
+    background: var(--bg6);
+    border: var(--border-width) solid var(--border3);
+    box-shadow: var(--shadow);
+    color: var(--txt-main);
+}
+
+.chapter .secondary a {
+	white-space: nowrap;
+}
+
 /*>>========== buttons with the the "to top" arrows and "expand"/"contract" symbols ==========<<*/
 /* anywhere else? */
 
-.listbox > .heading .action:has(a) {
+.listbox>.heading .action:has(a) {
   padding: 0;
   border: none;
   box-shadow: none;
   background-color: transparent;
 }
 
-.listbox > .heading .action a {
+.listbox>.heading .action a {
   padding-inline: 0.3em;
   color: inherit;
 }
@@ -1617,6 +1674,7 @@ span.offered.requested {
   border-style: solid;
   content: "";
   transform: rotate(45deg);
+  transition: transform 150ms;
 }
 
 .expanded::after {
@@ -1627,6 +1685,7 @@ span.offered.requested {
   padding: 0.2em;
   content: "";
   transform: rotate(-135deg);
+  transition: transform 150ms;
 }
 
 /*>========== CONTEXTS ==========<*/
@@ -1667,9 +1726,10 @@ span.offered.requested {
 /* tag layout */
 .commas:has(a.tag, a[data-remote="true"]) {
   display: inline-flex;
-    flex-wrap: wrap;
-    align-items: center;
-    column-gap: 5px; /* width of gap between neighbouring tags */
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 5px;
+  /* width of gap between neighbouring tags */
 }
 
 /* fix tag pages */
@@ -1680,16 +1740,19 @@ span.offered.requested {
 /* change appearance of tags here */
 /* excluding fandoms list, fav tags on splash page and heading tags in some places */
 a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag),
-.tags a[data-remote="true"], /* = hidden warnings/additional tags (can be set in preferences) */
+.tags a[data-remote="true"],
+/* = hidden warnings/additional tags (can be set in preferences) */
 .unwrangled,
 .added.tag {
   display: inline-block;
-  margin-block: 2.5px; /* gap between tag rows; needs to be done with margin because row-gap is not allowed on AO3 (as of August 2025) */
+  margin-block: 2.5px;
+  /* gap between tag rows; needs to be done with margin because row-gap is not allowed on AO3 (as of August 2025) */
   padding: 0.15em 0.35em;
   border: var(--border-width) solid var(--tag-border);
   border-radius: var(--radius-alt);
   background: var(--tag-default-bg);
-  background-origin: border-box !important; /* border-box because if I add a background image (gradient) it should start from the corner of the border, NOT the corner of the padding edge */
+  background-origin: border-box !important;
+  /* border-box because if I add a background image (gradient) it should start from the corner of the border, NOT the corner of the padding edge */
   font-size: 0.9em;
   line-height: 1.25;
   color: var(--tag-default-txt);
@@ -1700,7 +1763,8 @@ a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag),
 /* this is a terrible solution - it changes the fandom tags as well so they have to be "repaired" again (see below) */
 .blurb h5.fandoms.heading,
 .blurb h5.tags.heading {
-  margin-right: -5px; /* trick to align these tags with other tags/elements despite "margin-right: 5px" below */
+  margin-right: -5px;
+  /* trick to align these tags with other tags/elements despite "margin-right: 5px" below */
   letter-spacing: -0.5em;
   color: transparent;
 }
@@ -1715,7 +1779,7 @@ a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag),
 
 /* bold fandom tags on blurbs */
 .blurb h5.fandoms.heading a.tag {
-  font-weight: 700;
+  font-weight: normal;
 }
 
 /* fandom tags */
@@ -1761,7 +1825,8 @@ a.tag:not(.fandom.index.group a.tag, h2.heading a.tag):is(:hover, :focus),
 .listbox .heading a.tag:visited:is(:hover, :focus),
 .tags a[data-remote="true"]:is(:hover, :focus) {
   background: var(--tag-hgl-bg) !important;
-  background-origin: border-box !important; /* border-box because if I add a background image (gradient) it should start from the corner of the border, NOT the corner of the padding edge */
+  background-origin: border-box !important;
+  /* border-box because if I add a background image (gradient) it should start from the corner of the border, NOT the corner of the padding edge */
   border-color: transparent;
   color: var(--tag-hgl-txt) !important;
 }
@@ -1783,7 +1848,7 @@ h2.heading a.tag:is(:hover, :focus) {
 }
 
 h2.heading a.tag {
- line-height: inherit;
+  line-height: inherit;
 }
 
 /*>>========== added tags (search, filters, bookmarks etc.) ==========<<*/
@@ -1791,15 +1856,15 @@ h2.heading a.tag {
 .autocomplete li.added,
 .post .meta dd ul li.added {
   display: inline-flex;
-    align-items: center;
-    align-content: center;
-    column-gap: 0.4em;
+  align-items: center;
+  align-content: center;
+  column-gap: 0.4em;
   margin: 0 0.4em 0.4em 0;
 }
 
 .filters li.added {
   display: flex;
-    justify-content: space-between;
+  justify-content: space-between;
   margin-right: 0;
 }
 
@@ -1933,8 +1998,8 @@ dd.series span {
 
 .concise.index {
   display: flex;
-    flex-wrap: wrap;
-    column-gap: 1.5%;
+  flex-wrap: wrap;
+  column-gap: 1.5%;
   box-sizing: border-box;
   width: unset;
 }
@@ -1968,18 +2033,19 @@ fieldset fieldset.listbox {
   background-color: var(--bg7);
 }
 
-.listbox > .listbox {
+.listbox>.listbox {
   margin: 0.649em;
 }
 
-.listbox > .heading {
+.listbox>.heading {
   margin: 0;
   padding: 0.5em;
   color: var(--txt-main);
+  font-weight: 700;
 }
 
-.listbox > .heading a:not(.action a, .actions a),
-.listbox > .heading a:visited:not(.action a:visited, .actions a:visited) {
+.listbox>.heading a:not(.action a, .actions a),
+.listbox>.heading a:visited:not(.action a:visited, .actions a:visited) {
   color: var(--txt-main);
 }
 
@@ -2010,21 +2076,21 @@ fieldset fieldset.listbox {
 /* this is such a mess */
 
 #user-fandoms.listbox .actions,
-.listbox > .actions.pagination {
+.listbox>.actions.pagination {
   margin: 0.643em;
   padding: 0;
 }
 
-.listbox > .actions[role="navigation"]:not(.pagination) {
+.listbox>.actions[role="navigation"]:not(.pagination) {
   margin: 0;
   padding: 0;
 }
 
-.listbox > p.actions {
+.listbox>p.actions {
   margin: 0;
 }
 
-.listbox > .actions[role="navigation"]:not(.pagination) a {
+.listbox>.actions[role="navigation"]:not(.pagination) a {
   margin: 0.643em 0.429em;
 }
 
@@ -2093,9 +2159,9 @@ dl.meta dd ul {
 
 li.blurb,
 .blurb .blurb,
-.region.own + .dashboard li.blurb.own {
+.region.own+.dashboard li.blurb.own {
   padding: 0.75em 0.75em 0.643em;
-  background-color: var(--bg5);
+  background-color: var(--bg5) !important;
   overflow-wrap: anywhere;
   word-break: normal;
 }
@@ -2122,16 +2188,18 @@ li.picture.blurb,
 
 /* position of date posted */
 .blurb .datetime {
-  top: 0; /* leave this here for bookmarks */
-  padding: 0; /* leave this here for own mystery blurbs */
+  top: 0;
+  /* leave this here for bookmarks */
+  padding: 0;
+  /* leave this here for own mystery blurbs */
 }
 
 /*>========== new blurb header layout starts here ==========<*/
 
 .blurb .header:has(ul.required-tags) {
   display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-between;
   margin: 0;
 }
 
@@ -2165,8 +2233,8 @@ li.picture.blurb,
 .blurb .header ul.required-tags {
   order: 3;
   display: flex;
-    flex-wrap: wrap;
-    column-gap: 4px;
+  flex-wrap: wrap;
+  column-gap: 4px;
   position: unset;
   width: 100%;
   margin-top: 0.429em;
@@ -2175,10 +2243,10 @@ li.picture.blurb,
 }
 
 /* this is also needed to change position of content icons */
-.blurb ul.required-tags, 
+.blurb ul.required-tags,
 .blurb ul.required-tags li,
 .blurb ul.required-tags li+li+li,
-.blurb ul.required-tags li+li+li+li, 
+.blurb ul.required-tags li+li+li+li,
 .blurb ul.required-tags li a {
   position: unset;
   width: unset;
@@ -2197,8 +2265,8 @@ li.picture.blurb,
 /* for indices with icon pictures, e.g. collections, users, skins + mystery blurbs */
 
 /* formatting picture blurb header */
-.picture.blurb:has(.icon) > .header,
-.mystery.blurb:has(.icon) > .header {
+.picture.blurb:has(.icon)>.header,
+.mystery.blurb:has(.icon)>.header {
   min-height: 45px;
   margin: 0;
   padding-bottom: 0.75em;
@@ -2206,7 +2274,7 @@ li.picture.blurb,
 }
 
 /* remove border for user picture blurbs without descriptions or buttons */
-.user.pseud.picture.blurb:not(:has(blockquote, ul.actions)) > .header {
+.user.pseud.picture.blurb:not(:has(blockquote, ul.actions))>.header {
   margin: 0;
   padding: 0;
   border: none;
@@ -2216,14 +2284,15 @@ li.picture.blurb,
 .picture .icon img,
 .index .picture .icon {
   width: 45px;
-  height: 45px; /* slightly smaller than default */
+  height: 45px;
+  /* slightly smaller than default */
   border-radius: var(--icon-index-radius);
 }
 
 /* space for picture blurb icon */
-.blurb:has(.icon) > .header h4,
-.blurb:has(.icon) > .header h5,
-.blurb > .header > .mods.commas {
+.blurb:has(.icon)>.header h4,
+.blurb:has(.icon)>.header h5,
+.blurb>.header>.mods.commas {
   margin-left: 45px;
   padding-left: 0.75em;
 }
@@ -2243,7 +2312,7 @@ li.picture.blurb,
 /*>>========== mod: BOOKMARK ==========<<*/
 
 .bookmarks-index .bookmark.index {
-  overflow: hidden;
+  overflow: visible;
 }
 
 .bookmark .blurb h4.heading {
@@ -2253,7 +2322,8 @@ li.picture.blurb,
 /* bookmark icon placement for blurbs */
 .bookmark p.status {
   top: 5px;
-  right: 0.75em; /* same as blurb padding */
+  right: 0.75em;
+  /* same as blurb padding */
   width: 25px;
   margin: 0;
 }
@@ -2265,7 +2335,8 @@ li.picture.blurb,
   z-index: -1;
   box-sizing: border-box;
   height: 40px;
-  border-inline: 13px solid; /* width */
+  border-inline: 13px solid;
+  /* width */
   border-bottom: 5.5px solid transparent;
   border-radius: 0 0 0.2rem 0.2rem;
   content: "";
@@ -2283,11 +2354,12 @@ li.picture.blurb,
 
 /* number of bookmarks on hover/focus */
 .bookmark .count a:is(:hover, :focus) {
-  color: var(--link-hgl); /* this is technically not necessary because the symbol is hidden anyway */
+  color: var(--link-hgl);
+  /* this is technically not necessary because the symbol is hidden anyway */
 }
 
 /* move date next to bookmark icon */
-.bookmark p.status:has(span.text) + .header .datetime {
+.bookmark p.status:has(span.text)+.header .datetime {
   margin-right: 33px;
 }
 
@@ -2311,8 +2383,8 @@ li.picture.blurb,
   font-weight: 700;
 }
 
-.bookmark .module:has(.meta) > .byline,
-.bookmark .short:has(.meta) > .header {
+.bookmark .module:has(.meta)>.byline,
+.bookmark .short:has(.meta)>.header {
   margin-bottom: 0.649em;
 }
 
@@ -2325,7 +2397,7 @@ li.picture.blurb,
 
 .bookmark .short.blurb .header {
   display: flex;
-    column-gap: 0.643em;
+  column-gap: 0.643em;
   min-height: 25px;
 }
 
@@ -2386,7 +2458,8 @@ div.preface {
 }
 
 .preface h2.title {
-  font-weight: 700; /* bold preface title */
+  font-weight: 700;
+  /* bold preface title */
 }
 
 .preface h3 {
@@ -2412,9 +2485,9 @@ div.comment,
 /* comment body */
 li.comment:not(:has(.edit_comment)) {
   display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   padding: 0.75em 0.75em 0.429em;
   border: var(--border-width) solid var(--border3);
   border-radius: var(--radius-big);
@@ -2426,7 +2499,8 @@ li.comment:not(:has(.edit_comment)) {
 .comment .icon,
 .abbreviated .icon {
   order: 1;
-  width: 45px; /* slightly make them smaller than default size */
+  width: 45px;
+  /* slightly make them smaller than default size */
   height: 45px;
   margin: 0;
   border-radius: var(--icon-primary-radius);
@@ -2502,6 +2576,10 @@ li.comment:has(.edit_comment) {
   margin-left: 3%;
 }
 
+.comment fieldset {
+  padding: 0 0.75em 0.429em;
+}
+
 /*============================================================
 >> 16 ZONE: SYSTEM
 ============================================================*/
@@ -2516,15 +2594,15 @@ li.comment:has(.edit_comment) {
 /* create flexbox layout */
 .splash {
   display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-between;
   box-sizing: border-box;
   max-width: unset;
   margin: 0;
 }
 
 /* headings */
-.splash > .module h3 {
+.splash>.module h3 {
   border-bottom: 1.5px solid var(--border4);
   font-weight: 700;
   font-size: 1.4em;
@@ -2532,15 +2610,19 @@ li.comment:has(.edit_comment) {
 }
 
 /* modules (favorite tags, news, unread messages etc.) */
-.splash > .module,
-.logged-in .splash > .module {
+.splash>.module,
+.logged-in .splash>.module {
   box-sizing: border-box;
   margin-inline: 0;
   padding: 0;
 }
 
-.logged-in .splash > .module {
+.logged-in .splash>.module {
   width: 49%;
+}
+
+.splash .social {
+  display: none;
 }
 
 /*>>========== module: "Find your favorites" ==========<<*/
@@ -2595,7 +2677,7 @@ li.comment:has(.edit_comment) {
 /*>========== ZONE: SYSTEM: TOS (Terms Of Service), TOS FAQ, AND TOS POPUP ==========<*/
 /* to view this log out, delete cookies and visit random work */
 
-.tos .userstuff nav.toc > details > summary {
+.tos .userstuff nav.toc>details>summary {
   border-color: inherit;
 }
 
@@ -2623,8 +2705,8 @@ li.comment:has(.edit_comment) {
 /* layout */
 .home .primary.header.module {
   display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-between;
   margin-bottom: 1em;
 }
 
@@ -2633,6 +2715,7 @@ li.comment:has(.edit_comment) {
   height: fit-content;
   margin-block: 0.429em 0;
   border-bottom: 1.5px solid var(--border1);
+  font-weight: 700;
 }
 
 .home .header ul.actions {
@@ -2712,8 +2795,10 @@ form.filters {
   width: 25%;
   max-height: 96vh;
   border-radius: var(--radius-small);
-  margin-block: 0.643em !important; /* same as blurbs */
-  padding: 0 0.643em 0 2%; /* leave a little more space on the right for the scrollbar */
+  margin-block: 0.643em !important;
+  /* same as blurbs */
+  padding: 0 0.643em 0 2%;
+  /* leave a little more space on the right for the scrollbar */
   scrollbar-color: var(--border4) transparent;
 }
 
@@ -2788,7 +2873,8 @@ form.filters dl dl {
 .filters .expanded .expander {
   padding-left: 1em;
   box-shadow: none;
-  background-image: none; /* remove expander arrow */
+  background-image: none;
+  /* remove expander arrow */
   color: var(--txt-main);
 }
 
@@ -2800,6 +2886,7 @@ form.filters dl dl {
   border-block: 0.3em solid transparent;
   border-left: 0.5em solid;
   content: "";
+  transition: transform 150ms;
 }
 
 /* rotate arrow when expanded */
@@ -2825,7 +2912,7 @@ form.filters dl dl {
   font-weight: 400;
 }
 
-.filters ul li > label {
+.filters ul li>label {
   padding-block: 0.25em !important;
 }
 
@@ -2833,9 +2920,9 @@ form.filters dl dl {
 
 .filters dl.range {
   display: grid;
-    grid-template-columns: auto auto;
-    column-gap: 0.5em;
-    align-items: baseline;
+  grid-template-columns: auto auto;
+  column-gap: 0.5em;
+  align-items: baseline;
 }
 
 .filters dl.range dt {
@@ -2859,7 +2946,7 @@ form.filters dl dl {
 /* see "Archive: (19) zone tags skin" by AO3 */
 
 /* scrollable tag-listboxes */
-.tag.home.profile .listbox > .tags.index {
+.tag.home.profile .listbox>.tags.index {
   overflow: auto;
   max-height: 60vh;
 }
@@ -2903,13 +2990,15 @@ dl.nomination {
 
 .userstuff p,
 .userstuff details {
-  margin: 1em auto; /* slightly narrower space between paragraphs than in default AO3 skin */
+  margin: 1em auto;
+  /* slightly narrower space between paragraphs than in default AO3 skin */
 }
 
 /* lists */
 .userstuff li,
 .userstuff ol ul li {
-  margin-block: 0.5em; /* reduce space (line height) between list items */
+  margin-block: 0.5em;
+  /* reduce space (line height) between list items */
 }
 
 /*>========== bio on profile page ==========<*/
@@ -2955,10 +3044,12 @@ dl.nomination {
 
 /* work margins and text */
 #workskin {
-  max-width: 70em; /* slightly more narrow than default */
+  max-width: 70em;
+  /* slightly more narrow than default */
   margin: 0 auto;
   padding: 0 2%;
-  font-size: var(--txt-size-work); /* change font size of works here */
+  font-size: var(--txt-size-work);
+  /* change font size of works here */
 }
 
 /*============================================================
@@ -3070,7 +3161,7 @@ div.error,
 
 .announcement {
   display: flex;
-    align-items: end;
+  align-items: end;
   z-index: 1;
   padding: 1em 0 1em 2em;
   border-bottom: var(--border-width) solid #00000020;
@@ -3143,7 +3234,8 @@ div.error,
   margin: 0.5em 0;
   border: 1.5px solid;
   border-radius: 9999px;
-  background: var(--txt-alt2); /* same as text color, maybe change later */
+  background: var(--txt-alt2);
+  /* same as text color, maybe change later */
 }
 
 .announcement .thermometer .goal .amount {
@@ -3202,7 +3294,8 @@ span.question {
 }
 
 a.question {
-  border: none; /* keep this here so there is no link underline */
+  border: none;
+  /* keep this here so there is no link underline */
 }
 
 .heading a.question,
@@ -3212,33 +3305,20 @@ a.question {
 
 /* new cross symbol on rejected elements to prevent it from turning into an emoji on IOS */
 span.rejected.symbol::before {
-  content: "\002716\fe0e"; /* unicode cross + variation selector to stop it from turning into an emoji */
+  content: "\002716\fe0e";
+  /* unicode cross + variation selector to stop it from turning into an emoji */
 }
 
 /* new checkmark symbol on approved elements to prevent it from turning into an emoji on IOS */
 span.approved.symbol::before {
-  content: "\002714\fe0e"; /* unicode checkmark + variation selector to stop it from turning into an emoji */
+  content: "\002714\fe0e";
+  /* unicode checkmark + variation selector to stop it from turning into an emoji */
 }
 
 /* hide old checkmark and cross symbols (see above) */
 span.rejected.symbol span,
 span.approved.symbol span {
   display: none;
-}
-
-/* prevent checkmark symbol on replied to messages from turning into an emoji on IOS */
-/* have to do it differently than above because of different html - this hides the old checkmark symbol first */
-span.replied {
-  line-height: 0;
-  text-indent: -9999px;
-}
-
-/* new checkmark symbol */
-span.replied::after {
-  display: block;
-  line-height: 1.286;
-  text-indent: 0;
-  content: "\002714\fe0e"; /* unicode checkmark + variation selector to stop it from turning into an emoji */
 }
 
 /*>========== SYMBOLS KEY (help content) ==========<*/
@@ -3258,7 +3338,7 @@ dl#symbols-key dd {
 #symbols-key dl {
   width: auto;
   margin: 0;
-  padding: 0.643em 0.643em 0 0.643em ;
+  padding: 0.643em 0.643em 0 0.643em;
   border: var(--border-width) solid var(--border1);
   border-radius: var(--radius-mid);
   background-color: var(--bg5);
@@ -3280,27 +3360,34 @@ dl#symbols-key dd {
   box-sizing: border-box;
   border: var(--border-width) solid var(--icon-border2);
   background:
-    var(--icon-bg) /* change background color here */
+    var(--icon-bg)
+    /* change background color here */
     content-box;
 }
 
 /* default user icon */
 img[src$="/images/skins/iconsets/default/icon_user.png"] {
   box-sizing: border-box;
-  border: var(--border-width) solid var(--icon-border2); /* change border width and color here */
+  border: var(--border-width) solid var(--icon-border2);
+  /* change border width and color here */
   background:
-    var(--icon-id) /* change icon color here */
+    var(--icon-id)
+    /* change icon color here */
     content-box;
-  content: url("https://i.ibb.co/Wv3mdf19/zerafina-icon-user-default-02.png"); /* url of new icon */
+  content: url("https://i.ibb.co/Wv3mdf19/zerafina-icon-user-default-02.png");
+  /* url of new icon */
 }
 
 /* anon comment icon */
 .comment .icon .anonymous {
   box-sizing: border-box;
-  border: var(--border-width) solid var(--icon-border1); /* change border width and color here */
+  border: var(--border-width) solid var(--icon-border1);
+  /* change border width and color here */
   background:
-    url("https://i.ibb.co/1tbz1GYk/zerafina-icon-anon-01.png"), /* url of new icon */
-    var(--icon-anon) /* change background color here */
+    url("https://i.ibb.co/1tbz1GYk/zerafina-icon-anon-01.png"),
+    /* url of new icon */
+    var(--icon-anon)
+    /* change background color here */
     border-box;
   background-size: cover;
 }
@@ -3308,32 +3395,41 @@ img[src$="/images/skins/iconsets/default/icon_user.png"] {
 /* guest comment icon */
 .comment .icon .visitor {
   box-sizing: border-box;
-  border: var(--border-width) solid var(--icon-border1); /* change border width and color here */
+  border: var(--border-width) solid var(--icon-border1);
+  /* change border width and color here */
   background:
-    url("https://i.ibb.co/JWmJv92v/zerafina-icon-user-visitor-02.png"), /* url of new icon */
-    var(--icon-anon) /* change background color here */
+    url("https://i.ibb.co/JWmJv92v/zerafina-icon-user-visitor-02.png"),
+    /* url of new icon */
+    var(--icon-anon)
+    /* change background color here */
     border-box;
   background-size: cover;
 }
 
 /* default collection icon */
 img[src$="/images/skins/iconsets/default/icon_collection.png"] {
-  border: var(--border-width) solid var(--icon-border1); /* change border width and color here */
+  border: var(--border-width) solid var(--icon-border1);
+  /* change border width and color here */
   background:
-    var(--icon-id) /* change background color here */
+    var(--icon-id)
+    /* change background color here */
     border-box;
-  content: url("https://i.ibb.co/ccsQCHhj/zerafina-icon-collection-03.png"); /* url of new icon */
+  content: url("https://i.ibb.co/ccsQCHhj/zerafina-icon-collection-03.png");
+  /* url of new icon */
 }
 
 /* tag icons */
-.tagset .primary .icon, 
+.tagset .primary .icon,
 .tag .primary .icon,
 .index .tagset .icon {
   box-sizing: border-box;
-  border: var(--border-width) solid var(--icon-border1); /* change border width and color here */
+  border: var(--border-width) solid var(--icon-border1);
+  /* change border width and color here */
   background:
-    url("https://i.ibb.co/9k8fw2Sk/zerafina-icon-tag-03.png"), /* url of new icon */
-    var(--icon-id) /* change background color here */
+    url("https://i.ibb.co/9k8fw2Sk/zerafina-icon-tag-03.png"),
+    /* url of new icon */
+    var(--icon-id)
+    /* change background color here */
     border-box;
   background-size: cover;
 }
@@ -3341,11 +3437,15 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
 /* icon for unrevealed works */
 .index .mystery .icon {
   box-sizing: border-box;
-  border: var(--border-width) solid var(--icon-border2); /* change width and color of outer border here */
-  box-shadow: inset 0 0 0 3px #FFFFFF; /* change width and color of inner border here */
+  border: var(--border-width) solid var(--icon-border2);
+  /* change width and color of outer border here */
+  box-shadow: inset 0 0 0 3px #FFFFFF;
+  /* change width and color of inner border here */
   background:
-    url("https://i.ibb.co/1tbz1GYk/zerafina-icon-anon-01.png"), /* url of new icon */
-    var(--icon-id) /* change background color here */
+    url("https://i.ibb.co/1tbz1GYk/zerafina-icon-anon-01.png"),
+    /* url of new icon */
+    var(--icon-id)
+    /* change background color here */
     content-box;
   background-size: cover;
 }
@@ -3353,10 +3453,13 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
 /* admin icon => seen on news posts */
 .admin .primary .icon {
   box-sizing: border-box;
-  border: var(--border-width) solid var(--icon-border1); /* change border width and color here */
+  border: var(--border-width) solid var(--icon-border1);
+  /* change border width and color here */
   background:
-    url("https://i.ibb.co/TBW1YD5b/zerafina-icon-admin-02.png"), /* url of new icon */
-    var(--icon-id) /* change background color here */
+    url("https://i.ibb.co/TBW1YD5b/zerafina-icon-admin-02.png"),
+    /* url of new icon */
+    var(--icon-id)
+    /* change background color here */
     border-box;
   background-size: cover;
 }
@@ -3365,10 +3468,13 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
 .skins .primary .icon:not(:has(a .icon)),
 .index .skins .icon:not(:has(a .icon)) {
   box-sizing: border-box;
-  border: var(--border-width) solid var(--icon-border1); /* change border width and color here */
+  border: var(--border-width) solid var(--icon-border1);
+  /* change border width and color here */
   background:
-    url("https://i.ibb.co/Qj9QDRCZ/zerafina-icon-skins-02.png"), /* url of new icon */
-    var(--icon-id) /* change icon color here */
+    url("https://i.ibb.co/Qj9QDRCZ/zerafina-icon-skins-02.png"),
+    /* url of new icon */
+    var(--icon-id)
+    /* change icon color here */
     border-box;
   background-size: cover;
 }
@@ -3389,8 +3495,8 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
 }
 
 /* sizing and borders for content symbols */
-.blurb ul.required-tags li a > span,
-.bookmark p.status a > span,
+.blurb ul.required-tags li a>span,
+.bookmark p.status a>span,
 #symbols-key dl img,
 #bookmark-symbols-key img {
   box-sizing: border-box;
@@ -3402,14 +3508,16 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
 
 /* empty symbols boxes (no rating, category or warning) */
 .required-tags .rating-notrated,
-.required-tags .category-none, 
-.required-tags .warning-no, 
+.required-tags .category-none,
+.required-tags .warning-no,
 .status .count,
 img[src$="/images/skins/iconsets/default/rating-notrated.png"],
 img[src$="/images/skins/iconsets/default/category-none.png"],
 img[src$="/images/skins/iconsets/default/warning-no.png"] {
-  border-color: var(--icon-border2) !important; /* change border color here */
-  background: var(--icon-bg); /* change background color here */
+  border-color: var(--icon-border2) !important;
+  /* change border color here */
+  background: var(--icon-bg);
+  /* change background color here */
 }
 
 /*
@@ -3422,127 +3530,156 @@ You can replace the border color with any other rgb, rgba, or hex color, transpa
 
 /* General Audiences */
 .required-tags .rating-general-audience,
-img[src$="/images/skins/iconsets/default/rating-general-audience.png"] { 
+img[src$="/images/skins/iconsets/default/rating-general-audience.png"] {
   background:
-    url("https://i.ibb.co/cXk9HdYH/zerafina-icon-rating-gen-01.png"), /* url of new icon */
-    var(--icon1); /* change background color here */
+    url("https://i.ibb.co/cXk9HdYH/zerafina-icon-rating-gen-01.png"),
+    /* url of new icon */
+    var(--icon1);
+  /* change background color here */
 }
 
 /* Teen And Up Audiences */
 .required-tags .rating-teen,
-img[src$="/images/skins/iconsets/default/rating-teen.png"] { 
+img[src$="/images/skins/iconsets/default/rating-teen.png"] {
   background:
-    url("https://i.ibb.co/xSmwW6CN/zerafina-icon-rating-teen-01.png"), /* url of new icon */
-    var(--icon2); /* change background color here */
+    url("https://i.ibb.co/xSmwW6CN/zerafina-icon-rating-teen-01.png"),
+    /* url of new icon */
+    var(--icon2);
+  /* change background color here */
 }
 
 /* Mature */
 .required-tags .rating-mature,
-img[src$="/images/skins/iconsets/default/rating-mature.png"] { 
+img[src$="/images/skins/iconsets/default/rating-mature.png"] {
   background:
-    url("https://i.ibb.co/chYzvd2w/zerafina-icon-rating-mature-01.png"), /* url of new icon */
-    var(--icon4); /* change background color here */
+    url("https://i.ibb.co/chYzvd2w/zerafina-icon-rating-mature-01.png"),
+    /* url of new icon */
+    var(--icon4);
+  /* change background color here */
 }
 
 /* Explicit */
 .required-tags .rating-explicit,
-img[src$="/images/skins/iconsets/default/rating-explicit.png"] { 
+img[src$="/images/skins/iconsets/default/rating-explicit.png"] {
   background:
-    url("https://i.ibb.co/Kp2nk21k/zerafina-icon-rating-explicit-01.png"), /* url of new icon */
-    var(--icon6); /* change background color here */
+    url("https://i.ibb.co/Kp2nk21k/zerafina-icon-rating-explicit-01.png"),
+    /* url of new icon */
+    var(--icon6);
+  /* change background color here */
 }
 
 /*>>========== Relationships, pairings, orientations ==========<<*/
 
 /* F/F */
-.required-tags .category-femslash, 
+.required-tags .category-femslash,
 img[src$="/images/skins/iconsets/default/category-femslash.png"] {
   background:
-    url("https://i.ibb.co/JwHx18Ht/zerafina-icon-category-ff-01.png"), /* url of new icon */
-    var(--icon6); /* change background color here */
+    url("https://i.ibb.co/JwHx18Ht/zerafina-icon-category-ff-01.png"),
+    /* url of new icon */
+    var(--icon6);
+  /* change background color here */
 }
 
 /* F/M */
-.required-tags .category-het, 
+.required-tags .category-het,
 img[src$="/images/skins/iconsets/default/category-het.png"] {
   background:
-    url("https://i.ibb.co/0yD62BY2/zerafina-icon-category-mf-01.png"), /* url of new icon */
-    var(--icon5); /* change background color here */
+    url("https://i.ibb.co/0yD62BY2/zerafina-icon-category-mf-01.png"),
+    /* url of new icon */
+    var(--icon5);
+  /* change background color here */
 }
 
 /* Gen */
 .required-tags .category-gen,
 img[src$="/images/skins/iconsets/default/category-gen.png"] {
   background:
-    url("https://i.ibb.co/8gwHmMQX/zerafina-icon-category-gen-01.png"), /* url of new icon */
-    var(--icon1); /* change background color here */
+    url("https://i.ibb.co/8gwHmMQX/zerafina-icon-category-gen-01.png"),
+    /* url of new icon */
+    var(--icon1);
+  /* change background color here */
 }
 
 /* M/M */
 .required-tags .category-slash,
 img[src$="/images/skins/iconsets/default/category-slash.png"] {
   background:
-    url("https://i.ibb.co/GQ2YZ686/zerafina-icon-category-mm-01.png"), /* url of new icon */
-    var(--icon3); /* change background color here */
+    url("https://i.ibb.co/GQ2YZ686/zerafina-icon-category-mm-01.png"),
+    /* url of new icon */
+    var(--icon3);
+  /* change background color here */
 }
 
 /* Multi */
 .required-tags .category-multi,
 img[src$="/images/skins/iconsets/default/category-multi.png"] {
   background:
-    conic-gradient(from 360deg, var(--icon5) 0% 25%, var(--icon3) 25% 50%, var(--icon6) 50% 75%, var(--icon1) 75% 100%); /* conic gradient with the colors of the relationship icons */
+    conic-gradient(from 360deg, var(--icon5) 0% 25%, var(--icon3) 25% 50%, var(--icon6) 50% 75%, var(--icon1) 75% 100%);
+  /* conic gradient with the colors of the relationship icons */
 }
 
 /* Other relationships */
-.required-tags .category-other, 
+.required-tags .category-other,
 img[src$="/images/skins/iconsets/default/category-other.png"] {
   background:
-    url("https://i.ibb.co/MD6r4zyH/zerafina-icon-category-other-01.png"), /* url of new icon */
-    linear-gradient(to left top, var(--icon1), var(--icon3), var(--icon5), var(--icon6)); /* gradient with the colors of the relationship icons */
+    url("https://i.ibb.co/MD6r4zyH/zerafina-icon-category-other-01.png"),
+    /* url of new icon */
+    linear-gradient(to left top, var(--icon1), var(--icon3), var(--icon5), var(--icon6));
+  /* gradient with the colors of the relationship icons */
 }
 
 /*>>========== Content warnings ==========<<*/
 
 /* Author chose not to warn */
-.required-tags .warning-choosenotto, 
+.required-tags .warning-choosenotto,
 img[src$="/images/skins/iconsets/default/warning-choosenotto.png"] {
   background:
-    url("https://i.ibb.co/m5Yk1TtQ/zerafina-icon-warning-choosenotto-01.png"), /* url of new icon */
-    var(--icon4); /* change background color here */
+    url("https://i.ibb.co/m5Yk1TtQ/zerafina-icon-warning-choosenotto-01.png"),
+    /* url of new icon */
+    var(--icon4);
+  /* change background color here */
 }
 
 /* Warnings apply */
 .required-tags .warning-yes,
-img[src$="/images/skins/iconsets/default/warning-yes.png"] { 
+img[src$="/images/skins/iconsets/default/warning-yes.png"] {
   background:
-    url("https://i.ibb.co/Jj9yFqFq/zerafina-icon-warning-yes-01.png"), /* url of new icon */
-    var(--icon6); /* change background color here */
+    url("https://i.ibb.co/Jj9yFqFq/zerafina-icon-warning-yes-01.png"),
+    /* url of new icon */
+    var(--icon6);
+  /* change background color here */
 }
 
 /* External work */
 .required-tags .external-work,
 img[src$="/images/skins/iconsets/default/warning-external-work.png"] {
   background:
-    url("https://i.ibb.co/p635NXjk/zerafina-icon-warning-external-work-02.png"), /* url of new icon */
-    var(--icon3); /* change background color here */
+    url("https://i.ibb.co/p635NXjk/zerafina-icon-warning-external-work-02.png"),
+    /* url of new icon */
+    var(--icon3);
+  /* change background color here */
 }
 
 /*>>========== Completion status ==========<<*/
 
 /* uncomplete/unfulfilled */
-.required-tags .complete-no, 
-img[src$="/images/skins/iconsets/default/complete-no.png"] { 
+.required-tags .complete-no,
+img[src$="/images/skins/iconsets/default/complete-no.png"] {
   background:
-    url("https://i.ibb.co/pYzPL49/zerafina-icon-complete-no-01.png"), /* url of new icon */
-    var(--icon6); /* change background color here */
+    url("https://i.ibb.co/pYzPL49/zerafina-icon-complete-no-01.png"),
+    /* url of new icon */
+    var(--icon6);
+  /* change background color here */
 }
 
 /* completed/filled */
 .required-tags .complete-yes,
-img[src$="/images/skins/iconsets/default/complete-yes.png"] { 
+img[src$="/images/skins/iconsets/default/complete-yes.png"] {
   background:
-    url("https://i.ibb.co/6JBN1vhz/zerafina-icon-complete-yes-01.png"), /* url of new icon */
-    var(--icon1); /* change background color here */
+    url("https://i.ibb.co/6JBN1vhz/zerafina-icon-complete-yes-01.png"),
+    /* url of new icon */
+    var(--icon1);
+  /* change background color here */
 }
 
 /*>>========== Bookmark symbols ==========<<*/
@@ -3554,36 +3691,44 @@ img[src$="/images/skins/iconsets/default/complete-yes.png"] {
 
 /* Rec bookmark */
 .status .rec,
-img[src$="/images/skins/iconsets/default/bookmark-rec.png"] { 
+img[src$="/images/skins/iconsets/default/bookmark-rec.png"] {
   background:
-    url("https://i.ibb.co/jPq89bqP/zerafina-icon-bookmark-rec-01.png"), /* url of new icon */
-    var(--icon9); /* change background color here */
+    url("https://i.ibb.co/jPq89bqP/zerafina-icon-bookmark-rec-01.png"),
+    /* url of new icon */
+    var(--icon9);
+  /* change background color here */
 }
 
 /* Rec bookmark ribbon color */
 .bookmark .blurb p.status a:not(.short a):has(.rec)::before {
-  border-inline-color: var(--icon9); /* ribbon color */
+  border-inline-color: var(--icon9);
+  /* ribbon color */
 }
 
 /* Public bookmark */
-.status .public, 
-img[src$="/images/skins/iconsets/default/bookmark-public.png"] { 
+.status .public,
+img[src$="/images/skins/iconsets/default/bookmark-public.png"] {
   background:
-    url("https://i.ibb.co/KjDwkXfk/zerafina-icon-bookmark-public-02.png"), /* url of new icon */
-    var(--icon1); /* change background color here */
+    url("https://i.ibb.co/KjDwkXfk/zerafina-icon-bookmark-public-02.png"),
+    /* url of new icon */
+    var(--icon1);
+  /* change background color here */
 }
 
 /* Public bookmark ribbon color */
 .bookmark .blurb p.status a:not(.short a):has(.public)::before {
-  border-inline-color: var(--icon1); /* ribbon color */
+  border-inline-color: var(--icon1);
+  /* ribbon color */
 }
 
 /* Private bookmark */
-.status .private, 
+.status .private,
 img[src$="/images/skins/iconsets/default/bookmark-private.png"] {
   background:
-    url("https://i.ibb.co/4wjGjfhb/zerafina-icon-bookmark-locked-02.png"), /* url of new icon */
-    var(--icon7); /* change background color here */
+    url("https://i.ibb.co/4wjGjfhb/zerafina-icon-bookmark-locked-02.png"),
+    /* url of new icon */
+    var(--icon7);
+  /* change background color here */
   font-size: 0;
 }
 
@@ -3596,20 +3741,24 @@ img[src$="/images/skins/iconsets/default/bookmark-private.png"] {
 
 /* Private bookmark ribbon color  */
 .bookmark .blurb p.status a:not(.short a):has(.private)::before {
-  border-inline-color: var(--icon7); /* ribbon color */
+  border-inline-color: var(--icon7);
+  /* ribbon color */
 }
 
 /* Hidden bookmark */
-.status .hidden, 
+.status .hidden,
 img[src$="/images/skins/iconsets/default/bookmark-hidden.png"] {
   background:
-    url("https://i.ibb.co/tp1vXhJ3/zerafina-icon-bookmark-hidden-01.png"), /* url of new icon */
-    var(--icon8); /* change background color here */
+    url("https://i.ibb.co/tp1vXhJ3/zerafina-icon-bookmark-hidden-01.png"),
+    /* url of new icon */
+    var(--icon8);
+  /* change background color here */
 }
 
 /* Hidden bookmark ribbon color */
 .bookmark .blurb p.status a:not(.short a):has(.hidden)::before {
-  border-inline-color: var(--icon8); /* ribbon color */
+  border-inline-color: var(--icon8);
+  /* ribbon color */
 }
 
 /*>========== RSS ICON ==========<*/
@@ -3623,9 +3772,9 @@ a.rss span {
 /* setup for the new rss icon */
 .actions li a.rss {
   display: inline-flex;
-    align-content: center;
-    align-items: center;
-    column-gap: 0.3em;
+  align-content: center;
+  align-items: center;
+  column-gap: 0.3em;
 }
 
 /* new rss icon */
@@ -3636,8 +3785,10 @@ a.rss span {
   border: 1px solid var(--icon-border1);
   border-radius: var(--icon-content-radius);
   background:
-    url("https://i.ibb.co/35VLs1PW/zerafina-icon-rss-01.png") /* url of new icon */
-    var(--icon4); /* background color */
+    url("https://i.ibb.co/35VLs1PW/zerafina-icon-rss-01.png")
+    /* url of new icon */
+    var(--icon4);
+  /* background color */
   background-size: cover;
   content: "";
 }
@@ -3654,17 +3805,21 @@ div:has(> p.kudos)::before {
   position: absolute;
   width: 55px;
   height: 55px;
-  background: url("https://i.ibb.co/fdCwtNqS/zerafina-icon-kudos-03.png"); /* url of new icon */
+  background: url("https://i.ibb.co/fdCwtNqS/zerafina-icon-kudos-03.png");
+  /* url of new icon */
   background-size: cover;
   content: "";
-  filter: var(--kudos-icon); /* adjust filter values to change color */
+  filter: var(--kudos-icon);
+  /* adjust filter values to change color */
 }
 
 /*>========== LOCK ICON for restricted works ==========<*/
 
 img[src$="/images/lockblue.png"] {
-  content: url("https://i.ibb.co/kVCsBwzY/zerafina-icon-lock-01.png"); /* url of new icon */
-  filter: var(--lock-icon); /* adjust filter values to change color */
+  content: url("https://i.ibb.co/kVCsBwzY/zerafina-icon-lock-01.png");
+  /* url of new icon */
+  filter: var(--lock-icon);
+  /* adjust filter values to change color */
 }
 
 /*============================================================
@@ -3685,9 +3840,10 @@ dl.stats dt,
 
 dl.stats {
   display: flex;
-    flex-wrap: wrap;
-    justify-content: right;
-    column-gap: 0.9em; /* gap between individual stats */
+  flex-wrap: wrap;
+  justify-content: right;
+  column-gap: 0.9em;
+  /* gap between individual stats */
 }
 
 /* stats in meta boxes should be left-aligned */
@@ -3697,14 +3853,15 @@ dl.stats {
 
 /* indent for stats icons in meta box on statistics page */
 dl.meta.statistics dd {
-  padding-left: 5px; /* this should be the same as margin-right below */
+  padding-left: 5px;
+  /* this should be the same as margin-right below */
 }
 
 /* position of icon in relation to corresponding value */
 dl.stats dd,
 dl.statistics dt {
   display: flex;
-    align-items: baseline;
+  align-items: baseline;
 }
 
 /*>>========== setup for the stats icons ==========<<*/
@@ -3720,13 +3877,15 @@ dl.statistics dt::before {
   display: inline-block;
   width: 1em;
   height: 1em;
-  margin-right: 5px; /* space between icon and stat value; this should be the same as padding-left above */
+  margin-right: 5px;
+  /* space between icon and stat value; this should be the same as padding-left above */
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   content: "";
   transform: translate(0, 1px);
-  filter: var(--stats-icon); /* changes the color of the icons */
+  filter: var(--stats-icon);
+  /* changes the color of the icons */
 }
 
 /*>>========== stats icons (images) ==========<<*/
@@ -3744,7 +3903,10 @@ dl.statistics dt.words::before {
 
 /* works */
 .stats dd.works::before,
-.stats dd:has(a[href$=works])::before /* works in collection */ {
+.stats dd:has(a[href$=works])::before
+
+/* works in collection */
+  {
   background-image: url("https://i.ibb.co/twZf0RM9/zerafina-stats-icon-works-01.png");
 }
 
@@ -3783,7 +3945,10 @@ dl.statistics dt.hits::before {
 
 /* collections */
 .stats dd.collections::before,
-.stats dd:has(a[href$=collections])::before /* subcollections*/ {
+.stats dd:has(a[href$=collections])::before
+
+/* subcollections*/
+  {
   background-image: url("https://i.ibb.co/ks5VXnDZ/zerafina-stats-icon-collection-01.png");
 }
 
@@ -3846,7 +4011,8 @@ dl.statistics dt.comment::before {
   background-image: url("https://i.ibb.co/HLPwzwMh/zerafina-stats-icon-tags-additional-01.png");
 }
 
-/* tagsets: freeform tags *//* example: https://archiveofourown.org/tag_sets/19213 */
+/* tagsets: freeform tags */
+/* example: https://archiveofourown.org/tag_sets/19213 */
 .tagset .meta .stats dd:nth-of-type(4)::before {
   background-image: url("https://i.ibb.co/ynKkVZyk/zerafina-stats-icon-tags-freeform-01.png");
 }
@@ -3904,7 +4070,10 @@ dl.stats dd {
 
 /* works */
 .stats dd.works::after,
-.stats dd:has(a[href$=works])::after /* works in collection */ {
+.stats dd:has(a[href$=works])::after
+
+/* works in collection */
+  {
   content: "Works";
 }
 
@@ -4015,7 +4184,8 @@ dl.stats dd {
 
 /* scrollbar */
 * {
-  scrollbar-color: var(--border4) var(--border1); /* first value = thumb, second value = track */
+  scrollbar-color: var(--border4) var(--border1);
+  /* first value = thumb, second value = track */
   scrollbar-width: thin;
 }
 
@@ -4030,9 +4200,9 @@ dl.stats dd {
 
 .media-index .media.fandom.index.group {
   display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .media-index .media .listbox {
@@ -4048,12 +4218,13 @@ dl.stats dd {
 #stat_chart {
   overflow: hidden;
   margin-top: 1em;
-  border-radius: var(--radius-mid); /* can't add border because it causes a weird error */
+  border-radius: var(--radius-mid);
+  /* can't add border because it causes a weird error */
   filter: var(--stat-chart);
 }
 
 /* make chart background transparent */
-svg > rect {
+svg>rect {
   filter: opacity(0)
 }
 
@@ -4064,23 +4235,23 @@ svg > rect {
   padding: 0.643em;
 }
 
-.statistics ul.index li > dl > dd > dl {
+.statistics ul.index li>dl>dd>dl {
   margin: 0;
 }
 
-.statistics ul.index li > dl {
+.statistics ul.index li>dl {
   display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    column-gap: 1em;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 1em;
 }
 
-.statistics ul.index li > dl > dt {
+.statistics ul.index li>dl>dt {
   margin-block: 0.3em;
 }
 
-.statistics ul.index li > dl > dd {
+.statistics ul.index li>dl>dd {
   margin-block: 0.3em;
   margin-left: auto;
 }
@@ -4097,4 +4268,103 @@ svg > rect {
 .tox-statusbar,
 .tox-dialog {
   filter: var(--rich-txt-editor);
+}
+
+/*>========== USERSCRIPT: AO3 FICTRACKER STYLING ==========<*/
+/* https://greasyfork.org/en/scripts/513435-ao3-fictracker */
+
+/* inline header wrapper styling */
+li.blurb #header.region {
+  display: inline-flex !important;
+  align-items: baseline !important;
+  flex-wrap: nowrap !important;
+  width: auto !important;
+  max-width: none !important;
+  position: static !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+li.blurb #header.region>ul.navigation.actions>li.dropdown {
+  color: var(--txt-main) !important;
+}
+
+/* user notes styling */
+.user-note-preview>div>div,
+.note-textarea {
+  border: 1px solid var(--border3) !important;
+  border-radius: var(--radius-big) !important;
+}
+
+.user-note-preview>div>div {
+  box-shadow: var(--shadow-box2) !important;
+}
+
+/* remove border when note exists */
+.user-note-preview>div>div:has(details) {
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.note-actions button {
+  background: var(--int-btn-bg) !important;
+  color: var(--int-btn-txt) !important;
+  border: 1px solid var(--int-btn-border) !important;
+  border-radius: var(--radius-small) !important;
+  box-shadow: var(--shadow-buttons) !important;
+  padding: 0.25em 0.75em !important;
+  font-size: 1em !important;
+  cursor: pointer !important;
+  transition: background 0.2s, color 0.2s;
+}
+
+.note-actions button:is(:hover, :focus) {
+  background: var(--int-btn-hgl-bg) !important;
+  color: var(--int-btn-hgl-txt) !important;
+  border-color: var(--int-btn-hgl-border) !important;
+}
+
+.user-note-preview details {
+  border-color: var(--border3) !important;
+  border-radius: var(--radius-mid) !important;
+  background: var(--bg6) !important;
+  box-shadow: var(--shadow-box2) !important;
+  padding: 0 !important;
+  margin: 18px 0 1px 0 !important;
+}
+
+.user-note-preview details>summary {
+  border-top-left-radius: var(--radius-mid);
+  border-top-right-radius: var(--radius-mid);
+}
+
+/*>========== USERSCRIPT: AO3 SITE WIZARD STYLING ==========<*/
+/* https://greasyfork.org/en/scripts/550537-ao3-site-wizard */
+
+input[type="range"] {
+  background: transparent;
+  border: none;
+}
+
+input[type="range"]::-moz-range-progress {
+  background: var(--link-hgl);
+  height: 0.25em;
+}
+
+input[type="range"]::-moz-range-track {
+  background: var(--txt-main) !important;
+  border: none !important;
+  height: 0.25em;
+  border-radius: 0.75em;
+}
+
+input[type="range"]::-moz-range-thumb {
+  background: var(--link-hgl);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
 }
