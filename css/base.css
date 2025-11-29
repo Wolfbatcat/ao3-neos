@@ -148,6 +148,7 @@ h6,
   font-family: Verdana, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
   overflow-wrap: anywhere;
   word-break: normal;
+  font-weight: bold;
 }
 
 /* "code" font family */
@@ -676,6 +677,10 @@ col.name {
 #dashboard .current {
   background-color: var(--int-current-bg);
   color: var(--int-current-txt);
+}
+
+#dashboard .current:hover {
+    font-weight: 700;
 }
 
 #dashboard .secondary {
@@ -2214,7 +2219,7 @@ li.picture.blurb,
   flex: 1;
   box-sizing: border-box;
   padding-right: 11ch;
-  font-size: 1em;
+  font-size: 1.1em;
   text-align: left;
 }
 
@@ -3001,6 +3006,10 @@ dl.nomination {
   /* reduce space (line height) between list items */
 }
 
+.userstuff img {
+  border-radius: var(--radius-small);
+}
+
 /*>========== bio on profile page ==========<*/
 
 .bio.module {
@@ -3546,6 +3555,7 @@ img[src$="/images/skins/iconsets/default/rating-teen.png"] {
     /* url of new icon */
     var(--icon2);
   /* change background color here */
+  background-position: center 1px;
 }
 
 /* Mature */
@@ -3556,6 +3566,8 @@ img[src$="/images/skins/iconsets/default/rating-mature.png"] {
     /* url of new icon */
     var(--icon4);
   /* change background color here */
+  background-size: 23px 23px !important;
+  background-position: center;
 }
 
 /* Explicit */
@@ -3648,6 +3660,7 @@ img[src$="/images/skins/iconsets/default/warning-yes.png"] {
     /* url of new icon */
     var(--icon6);
   /* change background color here */
+  background-position: center -2px;
 }
 
 /* External work */
@@ -3783,7 +3796,7 @@ a.rss span {
   width: 0.85em;
   height: 0.85em;
   border: 1px solid var(--icon-border1);
-  border-radius: var(--icon-content-radius);
+  border-radius: 6px;
   background:
     url("https://i.ibb.co/35VLs1PW/zerafina-icon-rss-01.png")
     /* url of new icon */

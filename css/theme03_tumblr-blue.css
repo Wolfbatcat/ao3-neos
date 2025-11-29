@@ -43,9 +43,9 @@ Color palettes used for main backgrounds, borders, text and interaction elements
   --bg1:                 #1A2735;                  /* main background, footer etc. */
   --bg2:                 transparent;              /* header */
   --bg3:                 transparent;              /* dashboard */
-  --bg4:                 #36465D;                  /* forms, modal dialogs, javascript context etc. */
-  --bg5:                 #263B53;                  /* content boxes (blurbs, comments etc.), meta box */
-  --bg6:                 #3D4C62;                  /* dropdown and secondary menus, tooltips etc. */
+  --bg4:                 var(--bg5);                  /* forms, modal dialogs, javascript context etc. */
+  --bg5:                 #23364c;                  /* content boxes (blurbs, comments etc.), meta box */
+  --bg6:                 var(--bg5);                  /* dropdown and secondary menus, tooltips etc. */
   --bg7:                 #26323F;                  /* own blurbs, listbox, some even/odd list items etc. */
   --bg8:                 #529ECC;                  /* collection header */
 
@@ -222,7 +222,8 @@ span.unread,
 span.replied,
 span.claimed,
 .actions span.defaulted,
-.datetime {
+.datetime,
+.splash .news .meta {
   font-family: "Favorit", "Instrument Sans", "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
 }
 
@@ -245,10 +246,9 @@ var,
 pre,
 samp,
 textarea#skin_css,
-.css.module blockquote pre,
-.splash .news .meta {
+.css.module blockquote pre {
   font-size: 0.95em;
-  font-family: Courier, monospace;
+  font-family: Victor Mono, monospace;
 }
 
 /*============================================================
@@ -368,6 +368,10 @@ input[type="submit"],
 input::file-selector-button {
   padding: 4px 14px;
   border-width: 1.5px !important;
+}
+
+.actions a:active, .current, a.current, a.current:hover, a:link.current, .current a:visited {
+	border: none !important;
 }
 
 .chapter.actions a:not(:hover, :focus) {
@@ -528,6 +532,7 @@ li.added:is(:hover, :focus) .delete a {
 >> 13 GROUP: BLURB
 ============================================================*/
 /* see "Archive: (13) group blurb skin" by AO3 */
+
 
 /*>========== various little mods ==========<*/
 
