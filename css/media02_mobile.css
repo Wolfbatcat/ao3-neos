@@ -206,6 +206,12 @@ p.navigation.actions {
   padding: 0 0.643em;
 }
 
+.region:has(ol.pagination.actions) form.filters,
+.javascript,
+form.filters dl {
+    background: var(--bg1);
+}
+
 /*============================================================
 >> Z3 MISCELLANEOUS
 ============================================================*/
