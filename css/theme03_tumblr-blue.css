@@ -103,7 +103,7 @@ Color palettes used for main backgrounds, borders, text and interaction elements
 
   --int-bg:              #0D141B10;                /* background for input and select elements */
 
-  --int-current-bg:      #BFBFBF26;                /* background for currently active elements */
+  --int-current-bg:      #323d49;                /* background for currently active elements */
   --int-current-txt:     #D9D9D9;                  /* text for currently active elements */
   --int-disabled-bg:     var(--bg7);               /* background for disabled buttons and checkboxes */
   --int-checked:         var(--bg8);               /* checked checkboxes and radio buttons */
@@ -318,6 +318,7 @@ textarea#skin_css,
 /*>========== nesting ==========<*/
 
 fieldset,
+form dl,
 fieldset fieldset,
 fieldset dl dl,
 fieldset fieldset fieldset,
@@ -414,7 +415,7 @@ a.current,
 a.current:hover,
 a:link.current,
 .current a:visited {
-  border: var(--int-current-bg) !important;
+  border-color: var(--int-current-bg) !important;
 }
 
 .chapter.actions a:not(:hover, :focus) {
@@ -562,23 +563,6 @@ li.added:is(:hover, :focus) {
 
 li.added:is(:hover, :focus) .delete a {
   color: inherit;
-}
-
-/*============================================================
->> 11 GROUP: LISTBOX
-============================================================*/
-/* see "Archive 2.0: (11) group listbox skin by AO3" by AO3 */
-
-.listbox,
-fieldset fieldset.listbox {
-  clear: right;
-  overflow: hidden;
-  margin: 0.643em auto 1em auto;
-  padding: 0;
-  border: var(--border-width) solid var(--border2);
-  border-radius: var(--radius-big);
-  box-shadow: none;
-  background-color: var(--bg7);
 }
 
 /*============================================================
