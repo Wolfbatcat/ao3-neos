@@ -375,6 +375,14 @@ input[type="radio"]:checked,
   background: var(--alert-txt);
 }
 
+/*>========== WIDGET: TOGGLED FORMS (SHOW/HIDE bookmark and collection) ==========<*/
+
+.toggled form,
+.dynamic form,
+.dynamic form dl {
+  background-color: var(--bg5);
+}
+
 /*============================================================
 >> 08 ACTIONS: BUTTONS
 ============================================================*/
@@ -547,7 +555,7 @@ dd.fandom.tags a {
 }
 
 li.added:is(:hover, :focus) {
-  border-color: var(--alert-txt);
+  border-color: var(--alert-bg);
   background: var(--alert-bg);
   color: var(--txt-alt2);
 }
