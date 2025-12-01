@@ -1,6 +1,6 @@
 # AO3 Site Skin: *neos*
 
-> This is a fork of the original [neos skin](https://github.com/ZerafinaCSS/neos/tree/main) by ZerafinaCSS. The updated `base.css` is compatible with any of the neos variants though only Tumblr Blue was modified.
+> This is a fork of the original [neos skin](https://github.com/ZerafinaCSS/neos/tree/main) by ZerafinaCSS. The updated `base.css` and `media02_mobile.css` are compatible with any of the original neos variants though only Tumblr Blue was modified.
 
 A site skin that gives AO3 a slightly modernized, semi-flat look. It also fixes some bugs and usability issues. Available in several dark and light mode variants.
 
