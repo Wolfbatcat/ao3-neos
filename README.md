@@ -1,5 +1,7 @@
 # AO3 Site Skin: *neos*
 
+> This is a fork of the original [neos skin](https://github.com/ZerafinaCSS/neos/tree/main) by ZerafinaCSS. The updated `base.css` is compatible with any of the neos variants though only Tumblr Blue was modified.
+
 A site skin that gives AO3 a slightly modernized, semi-flat look. It also fixes some bugs and usability issues. Available in several dark and light mode variants.
 
 Visit the [AO3 work](https://archiveofourown.org/works/65849527) for instructions.
@@ -13,12 +15,5 @@ Visit the [AO3 work](https://archiveofourown.org/works/65849527) for instruction
 
 ## Themes
 
-| Powder & Pink | Dusky Dark Purple | Tumblr Blue |
-| ------------- | ------------- | ------------- |
-| ![User bookmarks page with the Powder & Pink theme](/../main/images/preview_desktop_bookmarks_powder-pink.png) | ![User bookmarks page with the Dusky Dark Purple theme](/../main/images/preview_desktop_bookmarks_dusky-dark-purple.png) | ![User bookmarks page with the Tumblr Blue theme](https://raw.githubusercontent.com/Wolfbatcat/ao3-neos/refs/heads/main/images/preview_desktop_bookmarks_tumblr-blue.png) |
-
- Black & White | Midnight Black |  |
-| ------------- | ------------- | ------------- |
-| ![User bookmarks page with the Black & White theme](/../main/images/preview_desktop_bookmarks_black-white.png) | ![User bookmarks page with the Midnight Black theme](/../main/images/preview_desktop_bookmarks_midnight-black.png) | *More may follow* |
-
-Find more previews in the [images folder](/../main/images).
+### Tumblr Blue
+![User bookmarks page with the Tumblr Blue theme](https://raw.githubusercontent.com/Wolfbatcat/ao3-neos/refs/heads/main/images/preview_tumblr-blue.png) 
