@@ -3425,7 +3425,7 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
     var(--icon-id)
     /* change background color here */
     border-box;
-  content: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-collection-03.png");
+  content: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-collection-02.png");
   /* url of new icon */
 }
 
@@ -3437,7 +3437,7 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
   border: var(--border-width) solid var(--icon-border1);
   /* change border width and color here */
   background:
-    url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-tag-03.png"),
+    url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-tag-02.png"),
     /* url of new icon */
     var(--icon-id)
     /* change background color here */
