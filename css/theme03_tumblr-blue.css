@@ -44,8 +44,8 @@ Color palettes used for main backgrounds, borders, text and interaction elements
   --bg2:                 transparent;              /* header */
   --bg3:                 transparent;              /* dashboard */
   --bg4:                 #36465D;                  /* forms, modal dialogs, javascript context etc. */
-  --bg5:                 #263B53;                  /* content boxes (blurbs, comments etc.), meta box */
-  --bg6:                 #3D4C62;                  /* dropdown and secondary menus, tooltips etc. */
+  --bg5:                 #23364c;                  /* content boxes (blurbs, comments etc.), meta box */
+  --bg6:                 var(--bg4);                  /* dropdown and secondary menus, tooltips etc. */
   --bg7:                 #26323F;                  /* own blurbs, listbox, some even/odd list items etc. */
   --bg8:                 #529ECC;                  /* collection header */
 
@@ -225,7 +225,7 @@ span.claimed,
 .datetime,
 .splash .news .meta,
 select {
-  font-family: "Favorit", "Instrument Sans", "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+  font-family: "Favorit", "Instrument Sans", "Helvetica Neue", HelveticaNeue, Helvetica, Arial, serif;
 }
 
 /* headings font family */
@@ -236,7 +236,7 @@ h4,
 h5,
 h6,
 .heading {
-  font-family: "Favorit Modern", "Instrument Sans", "Favorit", "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+  font-family: "Favorit Modern", "Instrument Sans", "Favorit", "Helvetica Neue", HelveticaNeue, Helvetica, Arial, serif;
 }
 
 /* "code" font family */
