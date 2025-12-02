@@ -609,7 +609,6 @@ form ul.notes,
   color: var(--txt-alt2);
 }
 
-
 /*============================================================
 >> Z1 REPLACE THE ICONS AND IMAGES
 ============================================================*/
@@ -622,4 +621,15 @@ img[src$="/images/skins/iconsets/default/warning-yes.png"] {
     var(--icon6);
   /* change background color here */
   background-position: center -2px;
+}
+
+/*============================================================
+>> Z3 MISCELLANEOUS
+============================================================*/
+
+/* scrollbar */
+* {
+  scrollbar-color: #485870 var(--border1);
+  /* first value = thumb, second value = track */
+  scrollbar-width: thin;
 }
